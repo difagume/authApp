@@ -6,21 +6,22 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="[ 'home' ]" routerLinkActive="active">Home</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="[ 'home' ]">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="[ 'precios' ]" routerLinkActive="active">Precios</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="[ 'precios' ]">Precios</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="[ 'protegida' ]" routerLinkActive="active">Protegida</a>
+      <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()">
+        <a class="nav-link" [routerLink]="[ 'protegida' ]">Protegida</a>
       </li>
     </ul>
 
     <span class="navbar-text">
-      <button *ngIf="!auth.isAuthenticated()" (click)="login()" type="button" class="btn btn-outline-primary">Ingresar</button>
+      <button *ngIf="!auth.isAuthenticated()" (click)="login()" type="button" class="btn btn-outline-primary btn-sm">Ingresar
+      </button>
 
-      <button *ngIf="auth.isAuthenticated()" (click)="salir()" type="button" class="btn btn-outline-primary">Salir</button>
+      <button *ngIf="auth.isAuthenticated()" (click)="salir()" type="button" class="btn btn-outline-primary btn-sm">Salir</button>
     </span>
 
   </div>

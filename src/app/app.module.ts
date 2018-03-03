@@ -10,6 +10,7 @@ import { APP_ROUTING } from './app.routes';
 
 // Servicios
 import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AuthService } from './services/auth.service';
     APP_ROUTING
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
