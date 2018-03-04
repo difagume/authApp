@@ -75,5 +75,5 @@ export class AuthService {
       }
       cb(err, profile);
     });
-
   }
+}
